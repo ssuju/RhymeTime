@@ -6,10 +6,10 @@ import django.utils.timezone
 
 
 class Migration(migrations.Migration):
-
+    initial = True
     dependencies = [
-        ('rhymesapp', '0001_initial'),
-    ]
+
+                    ]
 
     operations = [
         migrations.CreateModel(
@@ -25,6 +25,7 @@ class Migration(migrations.Migration):
                 ('password', models.CharField(max_length=10)),
                 ('created_date', models.DateTimeField(default=django.utils.timezone.now)),
                 ('updated_date', models.DateTimeField(auto_now_add=True)),
+                ('zipcode', models.CharField(max_length=5)),
             ],
         ),
     ]
