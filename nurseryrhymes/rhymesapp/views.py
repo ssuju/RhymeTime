@@ -110,6 +110,7 @@ def user_register(request):
 
     return render(request, template, {'form': form})
 
+
 def emailView(request):
     if request.method == 'GET':
         form = ContactForm()
@@ -125,4 +126,3 @@ def emailView(request):
                 return HttpResponse('Invalid header found.')
             return HttpResponseRedirect('/email/success/')
     return render(request, 'rhymesapp/contact.html', {'form': form})
-
