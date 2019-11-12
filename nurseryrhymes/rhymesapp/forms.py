@@ -16,6 +16,7 @@ class RegisterForm(forms.Form):
     first_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
     last_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
 
+
 class ContactForm(forms.Form):
     from_email = forms.EmailField(required=True)
     subject = forms.CharField(required=True)

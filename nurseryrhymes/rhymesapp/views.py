@@ -54,6 +54,7 @@ def upgrade(request):
 def account_created(request):
     return render(request, 'rhymesapp/account_created.html', {'rhymesapp': account_created})
 
+
 def email(request):
     return render(request, 'rhymesapp/contact.html', {'rhymesapp': email})
 
