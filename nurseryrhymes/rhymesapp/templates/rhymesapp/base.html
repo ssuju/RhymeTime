@@ -76,7 +76,8 @@
                 <li><a href="{% url 'rhymesapp:nurseryList' %}">Nursery Rhyme List</a></li>
                 <li><a href="{% url 'rhymesapp:audio_list' %}">Audios</a></li>
                 <li><a href="{% url 'rhymesapp:upgrade' %}">Upgrade</a></li>
-                <li><a href="{% url 'rhymesapp:signup' %}">Sign Up</a></li>
+                <li><a href="{% url 'rhymesapp:register' %}">Register</a></li>
+                <li><a href="{% url 'rhymesapp:email' %}">Contact Us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}

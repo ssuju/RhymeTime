@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rhymesapp',
     'crispy_forms',
     'mathfilters',
-    'django.contrib.humanize'
+    'django.contrib.humanize',
+
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # During development only
@@ -62,7 +63,7 @@ ROOT_URLCONF = 'nurseryrhymes.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

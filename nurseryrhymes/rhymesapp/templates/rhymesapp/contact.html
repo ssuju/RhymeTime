@@ -1,0 +1,12 @@
+{% extends 'rhymesapp/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<h1>Contact Us</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="form-actions">
+      <input type="submit" value="Submit" class="btn btn-success">
+    </div>
+</form>
+{% endblock %}
