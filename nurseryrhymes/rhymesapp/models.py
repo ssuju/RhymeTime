@@ -8,7 +8,7 @@ class Account(models.Model):
     last_name = models.CharField(max_length=50)
     phone = models.CharField(max_length=10)
     email = models.EmailField(max_length=100)
-    zipcode = models.CharField(max_length=5)
+    street_address = models.CharField(max_length=40)
 
     created_date = models.DateTimeField(
         default=timezone.now)

@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class AccountForm(forms.ModelForm):
    class Meta:
        model = Account
-       fields = ('first_name', 'last_name', 'phone', 'email', 'zipcode')
+       fields = ('first_name', 'last_name', 'phone', 'email', 'street_address')
 
 
 class RegisterForm(forms.Form):

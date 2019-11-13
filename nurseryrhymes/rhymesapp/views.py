@@ -31,7 +31,7 @@ def audio_list(request):
 def account_information(request):
     account = Account.objects.filter(created_date__lte=timezone.now())
     return render(request, 'rhymesapp/account_information.html',
-                 {'accounts': account})
+                 {'account': account})
 
 
 def register(request):

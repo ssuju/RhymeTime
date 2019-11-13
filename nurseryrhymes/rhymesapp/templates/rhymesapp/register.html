@@ -3,7 +3,7 @@
 {% block content %}
 
     <div class="container">
-        <form action="{% url 'rhymesapp:register' %}" method="post">
+        <form action="{% url 'rhymesapp:user_register' %}" method="post">
             {% csrf_token %}
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
