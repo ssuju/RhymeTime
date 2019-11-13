@@ -1,6 +1,6 @@
 from .models import Account
 from django import forms
-
+from django.contrib.auth.models import User
 
 class AccountForm(forms.ModelForm):
    class Meta:
@@ -15,6 +15,7 @@ class RegisterForm(forms.Form):
     password_repeat = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control'}))
     first_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
     last_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
+    last_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
 
 
 class ContactForm(forms.Form):
