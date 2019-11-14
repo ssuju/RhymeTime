@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class AccountForm(forms.ModelForm):
    class Meta:
        model = Account
-       fields = ('first_name', 'last_name', 'phone', 'email', 'street_address')
+       fields = ('first_name', 'last_name', 'email', 'phone_number', 'street_address')
 
 
 class RegisterForm(forms.Form):
@@ -16,7 +16,8 @@ class RegisterForm(forms.Form):
     first_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
     last_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
     last_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
-
+    phone_number = forms.CharField(widget=forms.NumberInput(attrs={'class': 'form-control'}), required=False)
+    street_address = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
 
 class ContactForm(forms.Form):
     from_email = forms.EmailField(required=True)

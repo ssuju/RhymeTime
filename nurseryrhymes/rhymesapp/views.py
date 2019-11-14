@@ -29,9 +29,10 @@ def audio_list(request):
 
 @login_required
 def account_information(request):
-    account = Account.objects.filter(created_date__lte=timezone.now())
+#    account = Account.objects.filter(created_date__lte=timezone.now())
+    account = Account.objects.all()
     return render(request, 'rhymesapp/account_information.html',
-                 {'account': account})
+                 {'accounts': account})
 
 
 def register(request):
@@ -96,7 +97,21 @@ def user_register(request):
                 )
                 user.first_name = form.cleaned_data['first_name']
                 user.last_name = form.cleaned_data['last_name']
+                user.phone_number = form.cleaned_data['phone_number']
+                user.street_address = form.cleaned_data['street_address']
                 user.save()
+                # save the same info to account
+
+                first_name = form.cleaned_data['first_name']
+                last_name = form.cleaned_data['last_name']
+                phone_number = form.cleaned_data['phone_number']
+                street_address = form.cleaned_data['street_address']
+              #  account.first_name = form.cleaned_data['phone']
+                email = form.cleaned_data['email']
+               # account.first_name = form.cleaned_data['street_address']
+                account = Account(first_name=first_name, last_name=last_name, email=email, phone_number=phone_number,
+                                  street_address=street_address)
+                account.save()
 
                 # Login the user
                 login(request, user)

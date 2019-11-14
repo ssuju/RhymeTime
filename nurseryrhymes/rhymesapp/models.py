@@ -6,9 +6,9 @@ from django.utils import timezone
 class Account(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    phone = models.CharField(max_length=10)
     email = models.EmailField(max_length=100)
-    street_address = models.CharField(max_length=40)
+    phone_number = models.EmailField(max_length=100, default='')
+    street_address = models.CharField(max_length=40, default='')
 
     created_date = models.DateTimeField(
         default=timezone.now)
