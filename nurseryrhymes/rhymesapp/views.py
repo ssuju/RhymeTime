@@ -29,7 +29,7 @@ def audio_list(request):
 
 @login_required
 def account_information(request):
-#    account = Account.objects.filter(created_date__lte=timezone.now())
+    account = Account.objects.filter(created_date__lte=timezone.now())
     account = Account.objects.all()
     return render(request, 'rhymesapp/account_information.html',
                  {'accounts': account})
@@ -141,3 +141,4 @@ def emailView(request):
                 return HttpResponse('Invalid header found.')
             return HttpResponseRedirect('/email/success/')
     return render(request, 'rhymesapp/contact.html', {'form': form})
+
