@@ -44,9 +44,11 @@ INSTALLED_APPS = [
 
 ]
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # During development only
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
-
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'teamthreenurseryrhymes@gmail.com'
+EMAIL_HOST_PASSWORD = 'NurseryRhymes1!'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

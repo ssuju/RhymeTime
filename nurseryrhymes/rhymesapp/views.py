@@ -10,6 +10,7 @@ from django.shortcuts import render, redirect
 from .forms import ContactForm
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from .forms import EditProfileForm
+from django.conf import settings
 
 
 
@@ -118,10 +119,11 @@ def emailView(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             subject = form.cleaned_data['subject']
-            from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message']
+            email_address = form.cleaned_data['email_address']
+            recipient_list = ['teamthreenurseryrhymes@gmail.com', ]
             try:
-                send_mail(subject, message, from_email, ['admin@example.com'])
+                send_mail(subject, message, email_address, recipient_list, fail_silently=False)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return HttpResponseRedirect('/email/success/')

@@ -18,6 +18,7 @@ class RegisterForm(forms.Form):
     first_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
     last_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
 
+
 class EditProfileForm(UserChangeForm):
     password = None
     class Meta:
@@ -25,11 +26,8 @@ class EditProfileForm(UserChangeForm):
         fields = {'first_name', 'last_name', 'email'}
 
 
-
-
-
 class ContactForm(forms.Form):
-    from_email = forms.EmailField(required=True)
-    subject = forms.CharField(required=True)
-    message = forms.CharField(widget=forms.Textarea, required=True)
+    subject = forms.CharField(max_length=150)
+    email_address = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)
 
