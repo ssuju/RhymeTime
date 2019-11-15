@@ -27,53 +27,6 @@
                 <h2>What You Will Find Here:</h2>
                 <p>......</p>
             </div>
-            <div class="content container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="links">
-                            <!-- Example row of columns -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="thumbnail">
-                                        <img src="{% static "images/humpty dumpty.jpeg" %}" alt="customer"/>
-                                        <div class="caption">
-                                            <h2>Listen to nursery rhymes</h2>
-                                            <p></p>
-                                            <p><a class="btn btn-primary" href="{% url 'rhymesapp:audio_list' %}"
-                                                  role="button">View
-                                                details &raquo;</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="thumbnail">
-                                        <img src="{% static "images/mom&daughter.jpeg" %}" alt="cupcakes"/>
-                                        <div class="caption">
-                                            <h2>Make reading fun!</h2>
-                                            <p><a class="btn btn-primary" href="{% url 'rhymesapp:nurseryList' %}"
-                                                  role="button">View
-                                                details &raquo;</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="thumbnail">
-                                        <img src="{% static "images/happy.jpg" %}" alt="lunch"/>
-                                        <div class="caption">
-                                            <h2>Upgrade</h2>
-                                            <p>Here is what we offer!</p>
-                                            <p><a class="btn btn-primary" href="{% url 'rhymesapp:upgrade' %}"
-                                                  role="button">View
-                                                details &raquo;</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
     </body>
     </html>
 {% endblock %}
