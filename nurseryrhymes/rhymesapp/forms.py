@@ -19,10 +19,11 @@ class RegisterForm(forms.Form):
     last_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
 
 class EditProfileForm(UserChangeForm):
-
+    password = None
     class Meta:
         model = User
         fields = {'first_name', 'last_name', 'email'}
+
 
 
 
