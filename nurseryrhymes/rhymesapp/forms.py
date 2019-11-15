@@ -22,7 +22,7 @@ class EditProfileForm(UserChangeForm):
 
     class Meta:
         model = User
-        fields = {'last_name', 'email', 'first_name'}
+        fields = {'first_name', 'email', 'last_name'}
 
 
 
