@@ -1,11 +1,13 @@
+from django.contrib.auth.forms import UserChangeForm, UserCreationForm
+from django.contrib.auth.forms import User
 from .models import Account
 from django import forms
-from django.contrib.auth.models import User
+
 
 class AccountForm(forms.ModelForm):
    class Meta:
        model = Account
-       fields = ('first_name', 'last_name', 'email', 'phone_number', 'street_address')
+       fields = ('first_name', 'last_name', 'phone', 'email', 'zipcode')
 
 
 class RegisterForm(forms.Form):
@@ -15,9 +17,15 @@ class RegisterForm(forms.Form):
     password_repeat = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control'}))
     first_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
     last_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    last_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
-    phone_number = forms.CharField(widget=forms.NumberInput(attrs={'class': 'form-control'}), required=False)
-    street_address = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
+
+class EditProfileForm(UserChangeForm):
+
+    class Meta:
+        model = User
+        fields = {'email', 'first_name', 'last_name'}
+
+
+
 
 class ContactForm(forms.Form):
     from_email = forms.EmailField(required=True)

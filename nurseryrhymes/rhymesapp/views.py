@@ -1,17 +1,16 @@
-from django.contrib.auth import login
+from django.contrib.auth import login, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from .models import *
 from .forms import *
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseRedirect
 from .forms import RegisterForm
 from django.contrib.auth.models import User
-from django.shortcuts import render
-from django.shortcuts import redirect
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import ContactForm
+from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
+from .forms import EditProfileForm
+
 
 
 now = timezone.now()
@@ -30,7 +29,6 @@ def audio_list(request):
 @login_required
 def account_information(request):
     account = Account.objects.filter(created_date__lte=timezone.now())
-    account = Account.objects.all()
     return render(request, 'rhymesapp/account_information.html',
                  {'accounts': account})
 
@@ -97,21 +95,7 @@ def user_register(request):
                 )
                 user.first_name = form.cleaned_data['first_name']
                 user.last_name = form.cleaned_data['last_name']
-                user.phone_number = form.cleaned_data['phone_number']
-                user.street_address = form.cleaned_data['street_address']
                 user.save()
-                # save the same info to account
-
-                first_name = form.cleaned_data['first_name']
-                last_name = form.cleaned_data['last_name']
-                phone_number = form.cleaned_data['phone_number']
-                street_address = form.cleaned_data['street_address']
-              #  account.first_name = form.cleaned_data['phone']
-                email = form.cleaned_data['email']
-               # account.first_name = form.cleaned_data['street_address']
-                account = Account(first_name=first_name, last_name=last_name, email=email, phone_number=phone_number,
-                                  street_address=street_address)
-                account.save()
 
                 # Login the user
                 login(request, user)
@@ -142,3 +126,38 @@ def emailView(request):
             return HttpResponseRedirect('/email/success/')
     return render(request, 'rhymesapp/contact.html', {'form': form})
 
+
+def infoView(request):
+    args = {'user': request.user}
+    return render(request, 'rhymesapp/account_information.html', args)
+
+
+def edit_profile(request):
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST, instance=request.user)
+
+        if form.is_valid():
+            form.save()
+            return redirect('/account_information')
+
+    else:
+        form = EditProfileForm(instance=request.user)
+        args = {'form': form}
+        return render(request, 'rhymesapp/edit_profile.html', args)
+
+
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(data=request.POST, user=request.user)
+
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            return redirect('/account_information')
+        else:
+            return redirect('/change_password')
+
+    else:
+        form = PasswordChangeForm(user=request.user)
+        args = {'form': form}
+        return render(request, 'rhymesapp/change_password.html', args)
