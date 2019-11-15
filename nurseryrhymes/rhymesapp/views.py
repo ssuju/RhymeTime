@@ -58,6 +58,7 @@ def email(request):
     return render(request, 'rhymesapp/contact.html', {'rhymesapp': email})
 
 
+
 def success(request):
     return render(request, 'rhymesapp/success.html', {'rhymesapp': success})
 
@@ -138,6 +139,7 @@ def edit_profile(request):
 
         if form.is_valid():
             form.save()
+
             return redirect('/account_information')
 
     else:
@@ -161,3 +163,6 @@ def change_password(request):
         form = PasswordChangeForm(user=request.user)
         args = {'form': form}
         return render(request, 'rhymesapp/change_password.html', args)
+
+
+

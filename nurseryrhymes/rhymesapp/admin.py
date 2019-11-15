@@ -11,4 +11,3 @@ class AccountList(admin.ModelAdmin):
 
 
 admin.site.register(Account)
-
