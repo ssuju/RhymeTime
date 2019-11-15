@@ -70,13 +70,13 @@
 {#      #  <div class="title bar" id="titlebar">#}
             <img class="fit" src="{% static "images/Title Bar.png" %}" alt="title"/>
 {#        </div>#}
+
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="{% url 'rhymesapp:home' %}">Home</a></li>
                 <li><a href="{% url 'rhymesapp:nurseryList' %}">Nursery Rhyme List</a></li>
                 <li><a href="{% url 'rhymesapp:audio_list' %}">Audios</a></li>
                 <li><a href="{% url 'rhymesapp:upgrade' %}">Upgrade</a></li>
-                <li><a href="{% url 'rhymesapp:user_register' %}">Sign Up</a></li>
                 <li><a href="{% url 'rhymesapp:email' %}">Contact Us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -87,12 +87,21 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{% url 'logout' %}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             <li><a href="{% url 'rhymesapp:account_information' %}">Account Information</a></li>
+                            <li><a href="{% url 'logout' %}"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
                         </ul>
                     </li>
                 {% else %}
-                    <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                     <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{% url 'rhymesapp:user_register' %}">Sign Up</a></li>
+                            <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        </ul>
+                    </li>
                 {% endif %}
             </ul>
         </div>
