@@ -1,4 +1,5 @@
 {% extends 'rhymesapp/base.html' %}
+{% load staticfiles %}
 {% block content %}
 <html>
 <head>
@@ -13,19 +14,32 @@
     }
 </style>
 <div class="content container">
-    <p>
-        Block content: rhyme text
-    </p>
-    <p>
-        (pdf hyperlink)
-    </p>
-    <p>
-        (audio hyperlink)
-    </p>
+    <h2>Humpty Dumpty</h2>
+    <font size = "4">
+	Humpty Dumpty sat on a wall,<br>
+
+	Humpty Dumpty had a great fall.<br>
+
+	All the king's horses and all the king's men<br>
+
+	Couldn't put Humpty together again.<br>
+    </font>
+    <br>
+    <a href="{% static "theRhymes/humpty.pdf" %}" download = "Download PDF">
+    <span class = "btn btn-primary">Download PDF</span></a>
+    <br><br>
+    <audio controls>
+        <source src = "{% static "theRhymes/Humpty.mp4" %}"
+        Your browser does not support the audio element.
+    </audio>
 </div>
+<br>
 <div class="links">
-<a href="{% url 'rhymesapp:home' %}" class="row"><span
+    <a href="{% url 'rhymesapp:home' %}" class="row"><span
         class="btn btn-primary">Go Home</span></a>
+    <br>
+    <a href="{% url 'rhymesapp:nurseryList' %}" class = row>
+    <span class = "btn btn-primary">Go Back to Browse</span></a>
 </div>
 </body>
 </html>

@@ -31,16 +31,21 @@
 	Hickory, dickory, dock.<br>
     </font>
 
-    <a href="{% static "theRhymes/someClock.pdf" %}" download = "Download PDF"
-    class = "row"<span class = "btn btn-primary">Download PDF</span></a>
+    <br>
+    <a href="{% static "theRhymes/someClock.pdf" %}" download = "Download PDF">
+    <span class = "btn btn-primary">Download PDF</span></a>
+    <br>
+    <br>
     <audio controls>
         <source src = "{% static "theRhymes/Hickory.mp4" %}"
         Your browser does not support the audio element.
     </audio>
 </div>
+<br>
 <div class="links">
     <a href="{% url 'rhymesapp:home' %}" class="row"><span
         class="btn btn-primary">Go Home</span></a>
+    <br>
 
     <a href="{% url 'rhymesapp:nurseryList' %}" class="row"><span
         class="btn btn-primary">Go Back to Browse</span></a>
