@@ -15,9 +15,15 @@
     </style>
     <div class="content container">
         <h2>Browse our Collection of Nursery Rhyme</h2>
-        <p>
-            <a href="{% url 'rhymesapp:nurseryPage' %}">A Nursery Rhyme Page</a>
-        </p>
+        <li>
+            <a href="{% url 'rhymesapp:nurseryPage' %}"><h3>A Nursery Rhyme Page</h3></a>
+            <a href="{% url 'rhymesapp:londonBridge' %}"><h3>London Bridge</h3></a>
+            <a href="{% url 'rhymesapp:itsySpider' %}"><h3>Itsy Bitsy Spider</h3></a>
+            <a href="{% url 'rhymesapp:littleStar' %}"><h3>Twinkle Twinkle Little Star</h3></a>
+            <a href="{% url 'rhymesapp:jackJill' %}"><h3>Jack and Jill</h3></a>
+            <a href="{% url 'rhymesapp:humptyDumpty' %}"><h3>Humpty Dumpty</h3></a>
+            <a href="{% url 'rhymesapp:hickoryDock' %}"><h3>Hickory Dickory Dock</h3></a>
+        </li>
     </div>
     <div class="links">
         <a href="{% url 'rhymesapp:home' %}" class="row"><span
