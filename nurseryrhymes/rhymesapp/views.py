@@ -44,6 +44,24 @@ def nurseryList(request):
 def nurseryPage(request):
     return render(request, 'rhymesapp/nurseryPage.html', {'rhymesapp': nurseryPage})
 
+def londonBridge(request):
+    return render(request, 'rhymesapp/londonBridge.hmtl', {'rhymesapp': londonBridge})
+
+def littleStar(request):
+    return render(request, 'rhymesapp/littleStar.html', {'rhymesapp': littleStar})
+
+def jackJill(request):
+    return render(request, 'rhymesapp/jackJill.html', {'rhymesapp': jackJill})
+
+def itsySpider(request):
+    return render(request, 'rhymesapp/itsySpider.html', {'rhymesapp': itsySpider})
+
+def humptyDumpty(request):
+    return render(request, 'rhymesapp/humptyDumpty.html', {'rhymesapp': humptyDumpty})
+
+def hickoryDock(request):
+    return render(request, 'rhymesapp/hickoryDock.html', {'rhymesapp': humptyDumpty})
+
 
 @login_required
 def upgrade(request):
