@@ -1,0 +1,51 @@
+{% extends 'rhymesapp/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hickory Dickory Dock</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+<style>
+    body {
+        background-color: lightblue;
+    }
+    div{
+        -webkit-align-content: center;
+        align-content: center;
+    }
+</style>
+<div class="content container">
+    <h2>Hickory Dickory Dock</h2>
+    <font size = "4">
+	Hickory, dickory, dock.<br>
+
+	The mouse ran up the clock.<br>
+
+	The clock struck one,<br>
+
+	The mouse ran down,<br>
+
+	Hickory, dickory, dock.<br>
+    </font>
+
+    <a href="{% static "theRhymes/someClock.pdf" %}" download = "Download PDF"
+    class = "row"<span class = "btn btn-primary">Download PDF</span></a>
+    <audio controls>
+        <source src = "{% static "theRhymes/Hickory.mp4" %}"
+        Your browser does not support the audio element.
+    </audio>
+</div>
+<div class="links">
+    <a href="{% url 'rhymesapp:home' %}" class="row"><span
+        class="btn btn-primary">Go Home</span></a>
+
+    <a href="{% url 'rhymesapp:nurseryList' %}" class="row"><span
+        class="btn btn-primary">Go Back to Browse</span></a>
+</div>
+</body>
+</html>
+
+{% endblock %}
