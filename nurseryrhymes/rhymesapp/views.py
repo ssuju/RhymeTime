@@ -13,7 +13,6 @@ from .forms import EditProfileForm
 from django.conf import settings
 
 
-
 now = timezone.now()
 
 
