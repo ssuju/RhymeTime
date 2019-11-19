@@ -1,8 +1,13 @@
 {% extends 'rhymesapp/base.html' %}
 {% block content %}
 {% load crispy_forms_tags %}
-<h1>Edit Account Information</h1>
+<h1>Account Information</h1>
 {% block body %}
+    <style>
+        body {
+            background-color: #F3EBF6;
+        }
+    </style>
 <div class = 'container'>
         <h4>Username: {{ user.username }}</h4>
         <h4>First Name: {{ user.first_name }}</h4>

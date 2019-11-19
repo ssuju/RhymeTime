@@ -1,6 +1,11 @@
 {% extends "rhymesapp/base.html" %}
 
 {% block content %}
+    <style>
+        body {
+            background-color: #F3EBF6;
+        }
+    </style>
     {% if form.errors %}
     <br />
     <p>Your username and password didn't match. Please try again.</p>
@@ -20,3 +25,5 @@
          <button type="submit">Forgot Password</button>
 </form>
 {% endblock %}
+
+
