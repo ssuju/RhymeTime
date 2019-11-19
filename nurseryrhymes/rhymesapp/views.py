@@ -45,7 +45,7 @@ def nurseryPage(request):
     return render(request, 'rhymesapp/nurseryPage.html', {'rhymesapp': nurseryPage})
 
 def londonBridge(request):
-    return render(request, 'rhymesapp/londonBridge.hmtl', {'rhymesapp': londonBridge})
+    return render(request, 'rhymesapp/londonBridge.html', {'rhymesapp': londonBridge})
 
 def littleStar(request):
     return render(request, 'rhymesapp/littleStar.html', {'rhymesapp': littleStar})
