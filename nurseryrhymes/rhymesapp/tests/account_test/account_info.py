@@ -27,11 +27,9 @@ class Account_ATS(unittest.TestCase):
         elem = driver.find_element_by_xpath("/html/body/nav/div/div[2]/ul[2]/li/ul/li[1]/a").click()
         elem = driver.find_element_by_xpath("/html/body/div/div/div/form[1]/button").click()
         time.sleep(5)
-
-        driver.get("http://127.0.0.1:8000/account_information/edit/")
         elem2 = driver.find_element_by_id("id_first_name")
         elem2.clear()
-        elem2.send_keys("test")
+        elem2.send_keys("new test")
         time.sleep(5)
         elem = driver.find_element_by_xpath("/html/body/div/div/div/form/div/input").click()
 
