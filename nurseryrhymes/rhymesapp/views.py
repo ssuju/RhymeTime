@@ -20,7 +20,7 @@ def home(request):
     return render(request, 'rhymesapp/home.html',
                  {'rhymesapp': home})
 
-@login_required
+#@login_required
 def audio_list(request):
     return render(request, 'rhymesapp/audio_list.html',
                  {'rhymesapp': audio_list})
@@ -63,7 +63,7 @@ def hickoryDock(request):
     return render(request, 'rhymesapp/hickoryDock.html', {'rhymesapp': humptyDumpty})
 
 
-@login_required
+#@login_required
 def upgrade(request):
     return render(request, 'rhymesapp/upgrade.html', {'rhymesapp': upgrade})
 

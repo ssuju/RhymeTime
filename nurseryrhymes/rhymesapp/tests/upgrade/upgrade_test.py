@@ -4,12 +4,12 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
-class login(unittest.TestCase):
+class Upgrade(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome()
 
-    def test_blog(self):
+    def test_upgrade(self):
         user = "rhymetime"
         pwd = "team3!"
         driver = self.driver
@@ -23,6 +23,9 @@ class login(unittest.TestCase):
         driver.get("http://127.0.0.1:8000")
         assert "Logged In"
         time.sleep(5)
+
+        elem = driver.find_element_by_xpath("/html/body/nav/div/div[2]/ul[1]/li[3]/a").click()
+        time.sleep(10)
 
     def tearDown(self):
         self.driver.close()

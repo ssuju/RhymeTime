@@ -4,12 +4,12 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
-class login(unittest.TestCase):
+class Account_ATS(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome()
 
-    def test_blog(self):
+    def test_account(self):
         user = "rhymetime"
         pwd = "team3!"
         driver = self.driver
@@ -22,6 +22,20 @@ class login(unittest.TestCase):
         elem.send_keys(Keys.RETURN)
         driver.get("http://127.0.0.1:8000")
         assert "Logged In"
+        time.sleep(5)
+        elem = driver.find_element_by_xpath("/html/body/nav/div/div[2]/ul[2]/li/a").click()
+        elem = driver.find_element_by_xpath("/html/body/nav/div/div[2]/ul[2]/li/ul/li[1]/a").click()
+        elem = driver.find_element_by_xpath("/html/body/div/div/div/form[1]/button").click()
+        time.sleep(5)
+
+        driver.get("http://127.0.0.1:8000/account_information/edit/")
+        elem2 = driver.find_element_by_id("id_first_name")
+        elem2.clear()
+        elem2.send_keys("test")
+        time.sleep(5)
+        elem = driver.find_element_by_xpath("/html/body/div/div/div/form/div/input").click()
+
+
         time.sleep(5)
 
     def tearDown(self):
