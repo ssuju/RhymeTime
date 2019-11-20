@@ -3,12 +3,12 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-class login_logout(unittest.TestCase):
+class login(unittest.TestCase):
 
    def setUp(self):
        self.driver = webdriver.Chrome()
 
-   def test_blog(self):
+   def login_blog(self):
        user = "rhymetime"
        pwd = "team3!"
        driver = self.driver
