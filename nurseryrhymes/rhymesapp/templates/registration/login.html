@@ -17,13 +17,15 @@
         {% csrf_token %}
 
 
-            <input type="submit" value="Login"/>
+            <input type="submit" class="btn-success"value="Login"/>
             <input type="hidden" name="next" value="{{ next }}"/>
     </form>
 
 <form action="reset_password" method="get">
-         <button type="submit">Forgot Password</button>
+         <button type="submit" class="btn-success">Forgot Password</button>
 </form>
+
+
 {% endblock %}
 
 
