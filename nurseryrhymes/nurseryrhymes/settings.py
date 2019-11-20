@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 ]
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.gmail.com:587'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'teamthreenurseryrhymes@gmail.com'
 EMAIL_HOST_PASSWORD = 'NurseryRhymes1!'
