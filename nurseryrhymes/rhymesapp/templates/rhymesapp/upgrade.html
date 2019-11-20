@@ -2,198 +2,299 @@
 {% load staticfiles %}
 {% block content %}
 
-<div id="generic_price_table">
 
-    <style>
-        body {
-            background-color: #F3EBF6;
-        }
-    </style>
+<style>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <!--PRICE HEADING START-->
-                    <div class="price-heading clearfix">
-                        <h1>Story Time Pricing Table</h1>
-                    </div>
-                    <!--//PRICE HEADING END-->
-                </div>
-            </div>
-        </div>
-        <div class="container">
+  background-color:#F3EBF6;
 
-            <!--BLOCK ROW START-->
-            <div class="row">
-                <div class="col-md-4">
+    .comparison {
+  max-width:940px;
+  margin:0 auto;
+  font:13px/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-align:center;
+  padding:10px;
+        background: #F3EBF6;
+}
 
-                    <!--PRICE CONTENT START-->
-                    <div class="generic_content clearfix">
+.comparison table {
+  background: #F3EBF6;
+  width:100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  border-bottom:1px solid #CCC;
+}
 
-                        <!--HEAD PRICE DETAIL START-->
-                        <div class="generic_head_price clearfix">
+.comparison td, .comparison th {
+  border-right:1px solid #CCC;
+  empty-cells: show;
+  padding:10px;
+}
 
-                            <!--HEAD CONTENT START-->
-                            <div class="generic_head_content clearfix">
+.compare-heading {
+    background: #F3EBF6;
+  font-size:18px;
+  font-weight:bold !important;
+  border-bottom:0 !important;
+  padding-top:10px !important;
+}
 
-                                <!--HEAD START-->
-                                <div class="head_bg"></div>
-                                <div class="head">
-                                    <span>Basic</span>
-                                </div>
-                                <!--//HEAD END-->
+.comparison tbody tr:nth-child(odd) {
+  display:none;
+}
 
-                            </div>
-                            <!--//HEAD CONTENT END-->
+.comparison .compare-row {
+  background:#F5F5F5;
+}
 
-                            <!--PRICE START-->
-                            <div class="generic_price_tag clearfix">
-                                <span class="price">
-                                    <span class="sign"></span>
-                                    <span class="currency"></span>
-                                    <span class="cent"></span>
-                                    <span class="month"></span>
-                                </span>
-                            </div>
-                            <!--//PRICE END-->
+.comparison .tickblue {
+  color:#0078C1;
+}
 
-                        </div>
-                        <!--//HEAD PRICE DETAIL END-->
+.comparison .tickgreen {
+  color: #F3EBF6;
+}
 
-                        <!--FEATURE LIST START-->
-                        <div class="generic_feature_list">
-                            <ul>
-                                <li><span>Sign Up</span></li>
-                                <li><span>Nursery Rhyme</span></li>
-                            </ul>
-                        </div>
-                        <!--//FEATURE LIST END-->
+.comparison th {
+  font-weight:normal;
+  padding:0;
+  border-bottom:1px solid #CCC;
+}
 
-                        <!--BUTTON START-->
-                        <div class="generic_price_btn clearfix">
-                            <a class="" href="">Free</a>
-                        </div>
-                        <!--//BUTTON END-->
+.comparison tr td:first-child {
+  text-align:left;
+}
 
-                    </div>
-                    <!--//PRICE CONTENT END-->
+.comparison .qbse, .comparison .qbo, .comparison .tl {
+  color:#FFF;
+  padding:10px;
+  font-size:13px;
+  border-right:1px solid #CCC;
+  border-bottom:0;
+}
 
-                </div>
+.comparison .tl2 {
+  border-right:0;
+}
 
-                <div class="col-md-4">
+.comparison .qbse {
+  background: #F3EBF6;
+  color: #202020;
+  text-decoration-style: solid;
+  border-top-left-radius: 3px;
+  border-left:0px;
+}
 
-                    <!--PRICE CONTENT START-->
-                    <div class="generic_content active clearfix">
+.comparison .qbo {
+  background: #F3EBF6;
+  border-top-right-radius: 3px;
+  border-right:0px;
+}
 
-                        <!--HEAD PRICE DETAIL START-->
-                        <div class="generic_head_price clearfix">
+.comparison .price-info {
+  padding:5px 15px 15px 15px;
+}
 
-                            <!--HEAD CONTENT START-->
-                            <div class="generic_head_content clearfix">
+.comparison .price-was {
+  color:#999;
+  text-decoration: line-through;
+}
 
-                                <!--HEAD START-->
-                                <div class="head_bg"></div>
-                                <div class="head">
-                                    <span>Standard</span>
-                                </div>
-                                <!--//HEAD END-->
+.comparison .price-now, .comparison .price-now span {
+  color:darkblue;
+}
 
-                            </div>
-                            <!--//HEAD CONTENT END-->
+.comparison .price-now span {
+  font-size:40px;
+}
 
-                            <!--PRICE START-->
-                            <div class="generic_price_tag clearfix">
-                                <span class="price">
-                                    <span class="sign">$</span>
-                                    <span class="currency">5</span>
-                                    <span class="cent">.99</span>
-                                    <span class="month">/MON</span>
-                                </span>
-                            </div>
-                            <!--//PRICE END-->
+.comparison .price-small {
+    font-size: 18px !important;
+    position: relative;
+    top: -11px;
+    left: 2px;
+}
 
-                        </div>
-                        <!--//HEAD PRICE DETAIL END-->
+.comparison .price-buy {
+  background: coral;
+  padding:10px 20px;
+  font-size:12px;
+  display:inline-block;
+  color:#FFF;
+  text-decoration:none;
+  border-radius:3px;
+  text-transform:uppercase;
+  margin:5px 0 10px 0;
+}
 
-                        <!--FEATURE LIST START-->
-                        <div class="generic_feature_list">
-                            <ul>
-                                <li><span>Listen to Audios</span></li>
-                                <li><span>View PDF</span></li>
+.comparison .price-try {
+  font-size:12px;
+}
 
-                            </ul>
-                        </div>
-                        <!--//FEATURE LIST END-->
+.comparison .price-try a {
+  color:#202020;
+}
 
-                        <!--BUTTON START-->
-                        <div class="generic_price_btn clearfix">
-                            <a class="" href="">Upgrade</a>
-                        </div>
-                        <!--//BUTTON END-->
+@media (max-width: 767px) {
+  .comparison td:first-child, .comparison th:first-child {
+    display: none;
+  }
+  .comparison tbody tr:nth-child(odd) {
+    display:table-row;
+    background:#F7F7F7;
+  }
+  .comparison .row {
+    background:#FFF;
+  }
+  .comparison td, .comparison th {
+    border:1px solid #CCC;
+  }
+  .price-info {
+  border-top:0 !important;
 
-                    </div>
-                    <!--//PRICE CONTENT END-->
+}
 
-                </div>
-                <div class="col-md-4">
+}
 
-                    <!--PRICE CONTENT START-->
-                    <div class="generic_content clearfix">
+@media (max-width: 639px) {
+  .comparison .price-buy {
+    padding:5px 10px;
+  }
+  .comparison td, .comparison th {
+    padding:10px 5px;
+  }
+  .comparison .hide-mobile {
+    display:none;
+  }
+  .comparison .price-now span {
+  font-size:16px;
+}
 
-                        <!--HEAD PRICE DETAIL START-->
-                        <div class="generic_head_price clearfix">
+.comparison .price-small {
+    font-size: 16px !important;
+    top: 0;
+    left: 0;
+}
+  .comparison .qbse, .comparison .qbo {
+    font-size:12px;
+    padding:10px 5px;
+  }
+  .comparison .price-buy {
+    margin-top:10px;
+  }
+  .compare-heading {
+  font-size:13px;
+}
+}
+</style>
 
-                            <!--HEAD CONTENT START-->
-                            <div class="generic_head_content clearfix">
+<div class="comparison">
 
-                                <!--HEAD START-->
-                                <div class="head_bg"></div>
-                                <div class="head">
-                                    <span>Premium</span>
-                                </div>
-                                <!--//HEAD END-->
 
-                            </div>
-                            <!--//HEAD CONTENT END-->
+  <table>
+    <thead>
+      <tr>
+        <th class="tl tl2"></th>
+        <th class="qbse">
 
-                            <!--PRICE START-->
-                            <div class="generic_price_tag clearfix">
-                                <span class="price">
-                                    <span class="sign">$</span>
-                                    <span class="currency">9</span>
-                                    <span class="cent">.99</span>
-                                    <span class="month">/MON</span>
-                                </span>
-                            </div>
-                            <!--//PRICE END-->
+        </th>
+        <th colspan="3" class="qbo">
 
-                        </div>
-                        <!--//HEAD PRICE DETAIL END-->
+        </th>
+      </tr>
+      <tr>
+        <th class="tl"></th>
+        <th class="compare-heading">
+          Basic
+        </th>
+        <th class="compare-heading">
+          Standard
+        </th>
+        <th class="compare-heading">
+          Premium
+        </th>
 
-                        <!--FEATURE LIST START-->
-                        <div class="generic_feature_list">
-                            <ul>
-                                <li><span>Download Audio</span></li>
-                                <li><span>Download PDF</span></li>
-                            </ul>
-                        </div>
-                        <!--//FEATURE LIST END-->
+      </tr>
+      <tr>
+        <th></th>
+        <th class="price-info">
+          <div class="price-was">Was $7.00</div>
+          <div class="price-now"><span>$4<span class="price-small">.99</span></span> /month</div>
+          <div><a href="#" class="price-buy">Current <span class="hide-mobile">Plan</span></a></div>
+          <div class="price-try"><span class="hide-mobile">or </span><a href="#">try <span class="hide-mobile">it free</span></a></div>
+        </th>
+        <th class="price-info">
+          <div class="price-was">Was $10.00</div>
+          <div class="price-now"><span>$7<span class="price-small">.99</span></span> /month</div>
+          <div><a href="#" class="price-buy">Upgrade <span class="hide-mobile">Now</span></a></div>
+          <div class="price-try"><span class="hide-mobile">or </span><a href="#">try <span class="hide-mobile">it free</span></a></div>
+        </th>
+        <th class="price-info">
+          <div class="price-was">Was $30.00</div>
+          <div class="price-now"><span>$15<span class="price-small">.99</span></span> /month</div>
+          <div><a href="#" class="price-buy">Upgrade <span class="hide-mobile">Now</span></a></div>
+          <div class="price-try"><span class="hide-mobile">or </span><a href="#">try <span class="hide-mobile">it free</span></a></div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td colspan="4">Log In & Sign Up</td>
+      </tr>
+      <tr class="compare-row">
+        <td>Log In & Sign Up</td>
+        <td><span class="tickblue">✔</span></td>
+        <td><span class="tickblue">✔</span></td>
+        <td><span class="tickblue">✔</span></td>
 
-                        <!--BUTTON START-->
-                        <div class="generic_price_btn clearfix">
-                            <a class="" href="">Upgrade</a>
-                        </div>
-                        <!--//BUTTON END-->
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td colspan="4">Read Nursery Rhymes</td>
+      </tr>
+      <tr>
+        <td>Read Nursery Ryhmes</td>
+        <td><span class="tickblue">✔</span></td>
+        <td><span class="tickblue">✔</span></td>
+        <td><span class="tickblue">✔</span></td>
 
-                    </div>
-                    <!--//PRICE CONTENT END-->
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td colspan="4">Download Nursery PDF</td>
+      </tr>
+      <tr class="compare-row">
+        <td>Download Nursery PDF</td>
+        <td></td>
+        <td><span class="tickblue">✔</span></td>
+        <td><span class="tickblue">✔</span></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td colspan="4">Download Nursery Audio</td>
+      </tr>
+      <tr>
+        <td>Download Nursery Audio</td>
+        <td></td>
+        <td></td>
+        <td><span class="tickblue">✔</span></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td colspan="4">Works on PC, Mac & mobile</td>
+      </tr>
+      <tr class="compare-row">
+        <td>Multi-device downloads</td>
+        <td></td>
+        <td></td>
+        <td><span class="tickblue">✔</span></td>
 
-                </div>
-            </div>
-            <!--//BLOCK ROW END-->
 
-        </div>
-    <footer>
-    </footer>
+      </tr>
+
+    </tbody>
+  </table>
+
 </div>
 {% endblock %}
