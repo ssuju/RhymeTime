@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
-class login(unittest.TestCase):
+class login_test(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome()

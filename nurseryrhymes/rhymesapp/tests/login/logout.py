@@ -4,12 +4,12 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
-class login(unittest.TestCase):
+class logout_test(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome()
 
-    def test_blog(self):
+    def test_logout(self):
         user = "rhymetime"
         pwd = "team3!"
         driver = self.driver

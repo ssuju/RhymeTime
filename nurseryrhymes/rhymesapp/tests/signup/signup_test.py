@@ -10,7 +10,7 @@ class Register(unittest.TestCase):
         self.verificationErrors = []
         self.accept_next_alert = True
 
-    def test_untitled_test_case(self):
+    def test_signup(self):
         driver = self.driver
         driver.get("http://127.0.0.1:8000/")
         driver.find_element_by_xpath(
