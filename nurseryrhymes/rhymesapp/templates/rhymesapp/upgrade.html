@@ -1,72 +1,207 @@
 {% extends 'rhymesapp/base.html' %}
+{% load staticfiles %}
 {% block content %}
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Nursery Rhymes</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-    </head>
-    <body>
+<div id="generic_price_table">
     <style>
-        body {
-            background-color: #F3EBF6;
-        }
-    </style>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Welcome!</div>
-                    <div class="panel-body">
-                        Upgrade for more features!.
+
+        <div class="card" style="width: 18rem;">
+                                               <img src="..." class="card-img-top" alt="...">
+                                                                                                                                           <div class="card-body">
+                                                                                                                                                                                                                                                                                                            <h5 class="card-title">Card title</h5>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                          </div>
+                                                                                                                      </div>
+             </style>
+
+
+<section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!--PRICE HEADING START-->
+                    <div class="price-heading clearfix">
+                        <h1>Story Time Pricing Table</h1>
                     </div>
+                    <!--//PRICE HEADING END-->
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <h2 style="padding-left: 15Px">Upgrade Today!</h2>
-    </div>
-    <div>
-        <table class="table table-striped table-bordered table-hover">
-            <thead>
-            <tr class="bg-info">
-                <th>Username</th>
-                <th>Email</th>
-                <th>Credit Card Number</th>
-                <th>Expiration Date</th>
-                <th>CVV</th>
-                <th>Monthly Total</th>
-                <th colspan="3">Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for product in products %}
-                <tr>
-                    <td>{{ product.cust_name }}</td>
-                    <td>{{ product.product }}</td>
-                     <td>{{ product.p_description }}</td>
-                    <td>{{ product.quantity }}</td>
-                    <td>{{ product.pickup_time }}</td>
-                    <td>{{ product.charge }}</td>
-                           <td><a href=""
-                           class="btn btn-warning">Edit</a></td>
+        <div class="container">
 
-                   <td><a href=""
-                          onclick="return confirm('Are you sure you want to delete?')"
-                           class="btn btn-danger">Delete</a>
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    <div class="row">
-         <a href="" class="row"><span
-                    class="btn btn-primary">Upgrade</span></a>
-     </div>
+            <!--BLOCK ROW START-->
+            <div class="row">
+                <div class="col-md-4">
 
-    </div>
-    </body>
-    </html>
+                    <!--PRICE CONTENT START-->
+                    <div class="generic_content clearfix">
+
+                        <!--HEAD PRICE DETAIL START-->
+                        <div class="generic_head_price clearfix">
+
+                            <!--HEAD CONTENT START-->
+                            <div class="generic_head_content clearfix">
+
+                                <!--HEAD START-->
+                                <div class="head_bg"></div>
+                                <div class="head">
+                                    <span>Basic</span>
+                                </div>
+                                <!--//HEAD END-->
+
+                            </div>
+                            <!--//HEAD CONTENT END-->
+
+                            <!--PRICE START-->
+                            <div class="generic_price_tag clearfix">
+                                <span class="price">
+                                    <span class="sign"></span>
+                                    <span class="currency"></span>
+                                    <span class="cent"></span>
+                                    <span class="month"></span>
+                                </span>
+                            </div>
+                            <!--//PRICE END-->
+
+                        </div>
+                        <!--//HEAD PRICE DETAIL END-->
+
+                        <!--FEATURE LIST START-->
+                        <div class="generic_feature_list">
+                            <ul>
+                                <li><span>Sign Up</span></li>
+                                <li><span>Nuresry Rhyme</span></li>
+                            </ul>
+                        </div>
+                        <!--//FEATURE LIST END-->
+
+                        <!--BUTTON START-->
+                        <div class="generic_price_btn clearfix">
+                            <a class="" href="">Free</a>
+                        </div>
+                        <!--//BUTTON END-->
+
+                    </div>
+                    <!--//PRICE CONTENT END-->
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <!--PRICE CONTENT START-->
+                    <div class="generic_content active clearfix">
+
+                        <!--HEAD PRICE DETAIL START-->
+                        <div class="generic_head_price clearfix">
+
+                            <!--HEAD CONTENT START-->
+                            <div class="generic_head_content clearfix">
+
+                                <!--HEAD START-->
+                                <div class="head_bg"></div>
+                                <div class="head">
+                                    <span>Standard</span>
+                                </div>
+                                <!--//HEAD END-->
+
+                            </div>
+                            <!--//HEAD CONTENT END-->
+
+                            <!--PRICE START-->
+                            <div class="generic_price_tag clearfix">
+                                <span class="price">
+                                    <span class="sign">$</span>
+                                    <span class="currency">5</span>
+                                    <span class="cent">.99</span>
+                                    <span class="month">/MON</span>
+                                </span>
+                            </div>
+                            <!--//PRICE END-->
+
+                        </div>
+                        <!--//HEAD PRICE DETAIL END-->
+
+                        <!--FEATURE LIST START-->
+                        <div class="generic_feature_list">
+                            <ul>
+                                <li><span>Listen to Audios</span></li>
+                                <li><span>View PDF</span></li>
+
+                            </ul>
+                        </div>
+                        <!--//FEATURE LIST END-->
+
+                        <!--BUTTON START-->
+                        <div class="generic_price_btn clearfix">
+                            <a class="" href="">Upgrade</a>
+                        </div>
+                        <!--//BUTTON END-->
+
+                    </div>
+                    <!--//PRICE CONTENT END-->
+
+                </div>
+                <div class="col-md-4">
+
+                    <!--PRICE CONTENT START-->
+                    <div class="generic_content clearfix">
+
+                        <!--HEAD PRICE DETAIL START-->
+                        <div class="generic_head_price clearfix">
+
+                            <!--HEAD CONTENT START-->
+                            <div class="generic_head_content clearfix">
+
+                                <!--HEAD START-->
+                                <div class="head_bg"></div>
+                                <div class="head">
+                                    <span>Premium</span>
+                                </div>
+                                <!--//HEAD END-->
+
+                            </div>
+                            <!--//HEAD CONTENT END-->
+
+                            <!--PRICE START-->
+                            <div class="generic_price_tag clearfix">
+                                <span class="price">
+                                    <span class="sign">$</span>
+                                    <span class="currency">9</span>
+                                    <span class="cent">.99</span>
+                                    <span class="month">/MON</span>
+                                </span>
+                            </div>
+                            <!--//PRICE END-->
+
+                        </div>
+                        <!--//HEAD PRICE DETAIL END-->
+
+                        <!--FEATURE LIST START-->
+                        <div class="generic_feature_list">
+                            <ul>
+                                <li><span>Download Audio</span></li>
+                                <li><span>Download PDF</span></li>
+                            </ul>
+                        </div>
+                        <!--//FEATURE LIST END-->
+
+                        <!--BUTTON START-->
+                        <div class="generic_price_btn clearfix">
+                            <a class="" href="">Upgrade</a>
+                        </div>
+                        <!--//BUTTON END-->
+
+                    </div>
+                    <!--//PRICE CONTENT END-->
+
+                </div>
+            </div>
+            <!--//BLOCK ROW END-->
+
+        </div>
+    </section>
+    <footer>
+    </footer>
+</div>
 {% endblock %}
