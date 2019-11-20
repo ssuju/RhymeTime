@@ -20,6 +20,7 @@ def home(request):
     return render(request, 'rhymesapp/home.html',
                  {'rhymesapp': home})
 
+
 #@login_required
 def audio_list(request):
     return render(request, 'rhymesapp/audio_list.html',
